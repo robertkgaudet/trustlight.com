@@ -1,0 +1,65 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const services = [
+  {
+    idx: '01',
+    title: 'AI Strategy & Assessment',
+    what: 'We evaluate where AI genuinely fits in your business — and where it doesn’t. That means a candid look at your data, your workflows, and the actual problem you’re trying to solve, ending in a concrete recommendation rather than a deck.',
+    why: 'Avoids expensive bets on the wrong problem. Most failed AI projects were doomed at the framing stage, not the engineering stage.',
+  },
+  {
+    idx: '02',
+    title: 'AI Engineering & Integration',
+    what: 'We design and build LLM, RAG, and agent systems and integrate them into your products and operations — with the evaluation, guardrails, and observability that separate a reliable feature from a brittle one.',
+    why: 'Production-grade, not a demo that breaks under load. A prototype proves it’s possible; this is the part that makes it dependable.',
+  },
+  {
+    idx: '03',
+    title: 'Software Engineering & Architecture',
+    what: 'Full-stack engineering for the systems your business runs on — new builds, modernization of legacy code, and the architecture decisions underneath. AI or not, the fundamentals still have to be sound.',
+    why: 'Durable systems that outlast the engagement. We build software your own team can own, understand, and extend.',
+  },
+  {
+    idx: '04',
+    title: 'Advisory & Team Enablement',
+    what: 'Embedded senior guidance for teams already in motion: architecture review, code review, technical due diligence, and hands-on upskilling in modern AI and software practice.',
+    why: 'Capability stays in your house, not ours. The goal is to leave your team more capable than we found it.',
+  },
+];
+---
+<SiteLayout
+  title="Services"
+  description="AI strategy, AI engineering, software architecture, and advisory — delivered by senior engineers, built for production."
+>
+  <section class="shell masthead">
+    <span class="eyebrow">Services</span>
+    <h1>What we do, and why it matters.</h1>
+    <p class="lead">
+      Four practices, one standard: senior people, built for production. Each engagement
+      is scoped to the problem in front of you.
+    </p>
+  </section>
+
+  <section class="shell section" aria-label="Service offerings">
+    <div class="entries">
+      {services.map((s) => (
+        <article class="entry">
+          <span class="entry-idx num">{s.idx}</span>
+          <div class="entry-body">
+            <h3>{s.title}</h3>
+            <p class="what">{s.what}</p>
+            <p class="why"><b>Why it matters.</b> {s.why}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="shell section" aria-labelledby="svc-cta">
+    <div class="cta-band">
+      <h2 id="svc-cta">Not sure which fits? Start with a conversation.</h2>
+      <a class="btn" href="/contact">Start a conversation</a>
+    </div>
+  </section>
+</SiteLayout>

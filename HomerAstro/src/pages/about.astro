@@ -1,0 +1,90 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const principles = [
+  {
+    idx: '01',
+    title: 'Plain assessments',
+    body: 'We give you the honest read, not the flattering one. If a project is riskier or simpler than it looks, you hear it from us first.',
+  },
+  {
+    idx: '02',
+    title: 'Build for production, not the demo',
+    body: 'Anything can be made to work once. We build systems that hold up under real load, real data, and real users — and stay maintainable after we leave.',
+  },
+  {
+    idx: '03',
+    title: 'Senior people, end to end',
+    body: 'The people who scope your work are the people who build it. No hand-offs to a junior bench, no layers between you and the engineering.',
+  },
+  {
+    idx: '04',
+    title: 'We tell you when not to',
+    body: 'AI is not the answer to every problem. When a simpler approach serves you better, we will say so — even when it means less work for us.',
+  },
+];
+---
+<SiteLayout
+  title="About"
+  description="Trustlight is a small, senior AI and software consultancy. Quiet, candid, long-term in how we work."
+>
+  <section class="shell masthead">
+    <span class="eyebrow">About Trustlight</span>
+    <h1>Senior engineering, quietly done.</h1>
+    <p class="lead">
+      Trustlight is a small consultancy of senior engineers working in AI and software.
+      We exist for organizations that need the work done right the first time.
+    </p>
+  </section>
+
+  <section class="shell section" aria-labelledby="posture">
+    <div class="split">
+      <div>
+        <span class="eyebrow">The posture</span>
+        <h2 id="posture" style="margin-top: var(--s-3);">How we hold ourselves.</h2>
+      </div>
+      <div class="prose">
+        <p class="lead">
+          We think in years, not sprints. The systems we build are meant to outlast the
+          engagement and to be owned, understood, and extended by your own team.
+        </p>
+        <p>
+          AI has made it easy to ship something impressive and hard to ship something
+          dependable. We work in the gap between the two: clear about what the technology
+          can and cannot do, deliberate about where it belongs, and unhurried about getting
+          the foundations right.
+        </p>
+        <p>
+          We keep the firm small on purpose. It means the senior people you meet are the
+          ones who do the work, and that we take on engagements we can stand behind rather
+          than as many as we can fill.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="shell section" aria-labelledby="principles">
+    <div class="section-head">
+      <span class="eyebrow">How we work</span>
+      <h2 id="principles">Principles</h2>
+    </div>
+    <div class="entries">
+      {principles.map((p) => (
+        <article class="entry">
+          <span class="entry-idx num">{p.idx}</span>
+          <div class="entry-body">
+            <h3>{p.title}</h3>
+            <p class="what">{p.body}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="shell section" aria-labelledby="about-cta">
+    <div class="cta-band">
+      <h2 id="about-cta">Tell us what you’re working on.</h2>
+      <a class="btn" href="/contact">Start a conversation</a>
+    </div>
+  </section>
+</SiteLayout>

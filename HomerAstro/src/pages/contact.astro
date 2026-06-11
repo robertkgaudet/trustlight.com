@@ -1,0 +1,66 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+// Direct contact details — PLACEHOLDER until confirmed.
+const email = 'hello@trustlight.com';
+---
+<SiteLayout
+  title="Contact"
+  description="Tell us what you’re working on. Trustlight — senior AI and software consulting."
+>
+  <section class="shell masthead">
+    <span class="eyebrow">Contact</span>
+    <h1>Tell us what you’re working on.</h1>
+    <p class="lead">
+      A short note about the problem is enough to start. We read everything that comes in
+      and reply ourselves.
+    </p>
+  </section>
+
+  <section class="shell section" aria-label="Contact">
+    <div class="contact-grid">
+      <!-- Restrained form: name, email, message. Rectangular, hairline fields. -->
+      <form
+        method="post"
+        action="https://formspree.io/f/your-form-id"
+        novalidate
+        aria-labelledby="form-head"
+      >
+        <h2 id="form-head" class="visually-hidden">Send a message</h2>
+
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required />
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required />
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button class="btn" type="submit">Send message</button>
+      </form>
+
+      <!-- Direct contact details alongside -->
+      <aside aria-label="Direct contact">
+        <dl class="contact-detail">
+          <dt>Email</dt>
+          <dd><a href={`mailto:${email}`}>{email}</a></dd>
+        </dl>
+        <dl class="contact-detail">
+          <dt>Response time</dt>
+          <dd>Within <span class="num">2</span> business days.</dd>
+        </dl>
+        <p class="muted" style="font-size: var(--t-13); margin-top: var(--s-8);">
+          Placeholder details — replace the email, form endpoint, and any phone/location
+          before launch.
+        </p>
+      </aside>
+    </div>
+  </section>
+</SiteLayout>

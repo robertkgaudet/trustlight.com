@@ -1,0 +1,100 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const services = [
+  { idx: '01', title: 'AI Strategy & Assessment', blurb: 'Where AI actually earns its place — and where it doesn’t.' },
+  { idx: '02', title: 'AI Engineering & Integration', blurb: 'LLM, RAG, and agent systems built into real products.' },
+  { idx: '03', title: 'Software Engineering & Architecture', blurb: 'Full-stack build and modernization of core systems.' },
+  { idx: '04', title: 'Advisory & Team Enablement', blurb: 'Embedded senior guidance, review, and upskilling.' },
+];
+
+// Proof points — PLACEHOLDER figures, marked for replacement with real numbers.
+const stats = [
+  { figure: '15+', label: 'Years building production software' },
+  { figure: '40+', label: 'Engagements delivered' },
+  { figure: '99.9%', label: 'Uptime on systems we operate' },
+];
+---
+<SiteLayout
+  title="Trustlight"
+  description="Trustlight is a senior AI and software consultancy. We help teams decide where AI genuinely fits, then design, build, and ship it."
+>
+  <!-- Masthead — report-style, left aligned, one primary action -->
+  <section class="shell masthead">
+    <span class="eyebrow">Trustlight · AI &amp; Software Consulting</span>
+    <h1>We build AI and software systems that hold up in production.</h1>
+    <p class="lead">
+      Trustlight is a senior AI and software consultancy. We help teams decide where
+      AI genuinely fits, then design, build, and ship it.
+    </p>
+    <div class="actions">
+      <a class="btn" href="/contact">Start a conversation</a>
+    </div>
+  </section>
+
+  <!-- Services overview — hairline-divided grid, each links to /services -->
+  <section class="shell section" aria-labelledby="svc-head">
+    <div class="section-head">
+      <span class="eyebrow">What we do</span>
+      <h2 id="svc-head">Services</h2>
+    </div>
+    <div class="svc-grid">
+      {services.map((s) => (
+        <a class="svc-cell" href="/services">
+          <span class="idx num">{s.idx}</span>
+          <h3>{s.title}</h3>
+          <p>{s.blurb}</p>
+          <span class="more">View services →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Credibility band — proof points, figures in Plex Mono tabular -->
+  <section class="credibility" aria-labelledby="proof-head">
+    <div class="shell">
+      <div class="section-head">
+        <span class="eyebrow">Track record</span>
+        <h2 id="proof-head">Built to be relied on.</h2>
+      </div>
+      <div class="stats is-placeholder">
+        {stats.map((s) => (
+          <div class="stat">
+            <span class="stat-figure">{s.figure}</span>
+            <span class="stat-label">{s.label}</span>
+          </div>
+        ))}
+      </div>
+      <p class="muted" style="margin-top: var(--s-6); font-size: var(--t-13);">
+        Placeholder figures — to be replaced with verified numbers.
+      </p>
+    </div>
+  </section>
+
+  <!-- About teaser -->
+  <section class="shell section" aria-labelledby="about-teaser">
+    <div class="split">
+      <div>
+        <span class="eyebrow">Who we are</span>
+        <h2 id="about-teaser" style="margin-top: var(--s-3);">A small, senior shop.</h2>
+      </div>
+      <div class="prose">
+        <p class="lead">
+          We are a small consultancy of senior engineers. We think in years, not demos,
+          and we tell you plainly when AI isn’t the answer.
+        </p>
+        <p style="margin-top: var(--s-6);">
+          <a class="link-arrow" href="/about">More about Trustlight →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing contact prompt -->
+  <section class="shell section" aria-labelledby="contact-cta">
+    <div class="cta-band">
+      <h2 id="contact-cta">Have a problem worth getting right?</h2>
+      <a class="btn" href="/contact">Start a conversation</a>
+    </div>
+  </section>
+</SiteLayout>

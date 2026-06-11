@@ -1,0 +1,73 @@
+---
+// Trustlight public-site layout — clean, standalone Victora layer.
+// Deliberately does NOT load Homer's admin CSS/JS. Fast, accessible, SEO-clean.
+import '../styles/victora.css';
+import Header from '../components/site/Header.astro';
+import Footer from '../components/site/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** Override the canonical/og path; defaults to the current route. */
+  path?: string;
+}
+
+const {
+  title = 'Trustlight',
+  description = 'Trustlight is a senior AI and software consultancy. We help teams decide where AI genuinely fits, then design, build, and ship it.',
+  path,
+} = Astro.props;
+
+const SITE = 'https://trustlight.com';
+const pathname = (path ?? Astro.url.pathname).replace(/\/+$/, '') || '/';
+const canonical = SITE + (pathname === '/' ? '' : pathname);
+const fullTitle = title === 'Trustlight' ? 'Trustlight' : `${title} — Trustlight`;
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph / social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Trustlight" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+
+    <meta name="theme-color" content="#FBFAF7" />
+    <link rel="icon" href="/assets/images/favicon.ico" />
+
+    <!-- Type: Spectral (display + body) + IBM Plex Mono (figures/labels) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Spectral:wght@300;400;500;600&display=swap"
+    />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'Trustlight',
+        url: SITE,
+        description,
+      })}
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

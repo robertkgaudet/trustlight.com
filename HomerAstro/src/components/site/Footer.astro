@@ -1,0 +1,18 @@
+---
+// Trustlight site footer — wordmark/domain + nav repeat. Hairline top border, minimal.
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/services', label: 'Services' },
+  { href: '/contact', label: 'Contact' },
+];
+const year = 2026;
+---
+<footer class="site-footer">
+  <div class="shell">
+    <span class="foot-mark">trustlight.com &nbsp;·&nbsp; <span class="num">{year}</span></span>
+    <nav aria-label="Footer">
+      {links.map((l) => <a href={l.href}>{l.label}</a>)}
+    </nav>
+  </div>
+</footer>
