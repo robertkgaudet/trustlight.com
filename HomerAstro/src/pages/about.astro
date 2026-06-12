@@ -1,89 +1,83 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
 
-const principles = [
+const team = [
   {
-    idx: '01',
-    title: 'Plain assessments',
-    body: 'We give you the honest read, not the flattering one. If a project is riskier or simpler than it looks, you hear it from us first.',
+    src: '/assets/images/camille.jpg',
+    w: 1069, h: 1280,
+    alt: 'Camille Gaudet, nonprofit advisor',
+    name: 'Camille Gaudet',
+    role: 'Nonprofit Advisory & Business Leadership',
   },
   {
-    idx: '02',
-    title: 'Build for production, not the demo',
-    body: 'Anything can be made to work once. We build systems that hold up under real load, real data, and real users — and stay maintainable after we leave.',
-  },
-  {
-    idx: '03',
-    title: 'Senior people, end to end',
-    body: 'The people who scope your work are the people who build it. No hand-offs to a junior bench, no layers between you and the engineering.',
-  },
-  {
-    idx: '04',
-    title: 'We tell you when not to',
-    body: 'AI is not the answer to every problem. When a simpler approach serves you better, we will say so — even when it means less work for us.',
+    src: '/assets/images/rob.jpg',
+    w: 896, h: 1200,
+    alt: 'Rob Gaudet, AI integration lead',
+    name: 'Rob Gaudet',
+    role: 'AI Integration & Technology Leadership',
   },
 ];
 ---
 <SiteLayout
-  title="About"
-  description="Trustlight is a small, senior AI and software consultancy. Quiet, candid, long-term in how we work."
+  title="About Trustlight — Camille & Rob Gaudet"
+  description="Sixty years of combined operating experience. A South Louisiana husband-and-wife team helping organizations implement AI with measurable ROI."
 >
   <section class="shell masthead">
     <span class="eyebrow">About Trustlight</span>
-    <h1>Senior engineering, quietly done.</h1>
-    <p class="lead">
-      Trustlight is a small consultancy of senior engineers working in AI and software.
-      We exist for organizations that need the work done right the first time.
-    </p>
+    <h1>A husband-and-wife advisory team.</h1>
   </section>
 
-  <section class="shell section" aria-labelledby="posture">
-    <div class="split">
-      <div>
-        <span class="eyebrow">The posture</span>
-        <h2 id="posture" style="margin-top: var(--s-3);">How we hold ourselves.</h2>
-      </div>
-      <div class="prose">
-        <p class="lead">
-          We think in years, not sprints. The systems we build are meant to outlast the
-          engagement and to be owned, understood, and extended by your own team.
-        </p>
-        <p>
-          AI has made it easy to ship something impressive and hard to ship something
-          dependable. We work in the gap between the two: clear about what the technology
-          can and cannot do, deliberate about where it belongs, and unhurried about getting
-          the foundations right.
-        </p>
-        <p>
-          We keep the firm small on purpose. It means the senior people you meet are the
-          ones who do the work, and that we take on engagements we can stand behind rather
-          than as many as we can fill.
-        </p>
-      </div>
+  <section class="shell section" aria-label="Who we are">
+    <div class="prose">
+      <p class="lead">
+        Trustlight is Camille and Rob Gaudet — a husband-and-wife advisory team based in
+        South Louisiana. We were married in New Orleans in 2023, and we work the way we
+        married: side by side, solving the same problem from different angles.
+      </p>
+      <p>
+        Between us we bring sixty years of operating experience. Rob has spent thirty years
+        in software engineering and technology leadership, has led several businesses, and
+        for the past three years has been building fully agentic AI systems. Camille has
+        spent thirty years as a business leader in Louisiana and, for the last decade, has
+        run a nonprofit — which means she understands both the operator’s pressures and the
+        mission-driven organization’s. Together, we help organizations understand and
+        implement AI that pays for itself.
+      </p>
+      <p>
+        Our work is unglamorous on purpose. We find the place where your people spend weeks
+        on work a system could do in minutes — the estimate, the lease, the compliance file,
+        the grant application — and we build the workflow that removes the bottleneck. We
+        have helped companies save and make millions of dollars doing exactly this.
+      </p>
+      <p>
+        We serve the organizations the large consultancies overlook: the owner-led business
+        and the working nonprofit, across Lafayette, Baton Rouge, and New Orleans. Same
+        standard of rigor for both.
+      </p>
     </div>
   </section>
 
-  <section class="shell section" aria-labelledby="principles">
+  <section class="shell section" aria-labelledby="team-head">
     <div class="section-head">
-      <span class="eyebrow">How we work</span>
-      <h2 id="principles">Principles</h2>
+      <span class="eyebrow">The team</span>
+      <h2 id="team-head">Camille &amp; Rob</h2>
     </div>
-    <div class="entries">
-      {principles.map((p) => (
-        <article class="entry">
-          <span class="entry-idx num">{p.idx}</span>
-          <div class="entry-body">
-            <h3>{p.title}</h3>
-            <p class="what">{p.body}</p>
-          </div>
-        </article>
+    <div class="team">
+      {team.map((m) => (
+        <figure>
+          <img class="team-photo" src={m.src} alt={m.alt} width={m.w} height={m.h} loading="lazy" decoding="async" />
+          <figcaption>
+            <span class="team-name">{m.name}</span>
+            <span class="team-role">{m.role}</span>
+          </figcaption>
+        </figure>
       ))}
     </div>
   </section>
 
   <section class="shell section" aria-labelledby="about-cta">
     <div class="cta-band">
-      <h2 id="about-cta">Tell us what you’re working on.</h2>
+      <h2 id="about-cta">Tell us where the work is piling up.</h2>
       <a class="btn" href="/contact">Start a conversation</a>
     </div>
   </section>

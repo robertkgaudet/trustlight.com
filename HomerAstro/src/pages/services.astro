@@ -1,65 +1,98 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
 
-const services = [
+const business = [
   {
-    idx: '01',
-    title: 'AI Strategy & Assessment',
-    what: 'We evaluate where AI genuinely fits in your business — and where it doesn’t. That means a candid look at your data, your workflows, and the actual problem you’re trying to solve, ending in a concrete recommendation rather than a deck.',
-    why: 'Avoids expensive bets on the wrong problem. Most failed AI projects were doomed at the framing stage, not the engineering stage.',
+    problem:
+      'Your team spends weeks turning 200-page leases, estimates, and compliance documents into something usable. Skilled people doing slow work a system could do in minutes — and the backlog never clears.',
+    solution:
+      'We build the AI workflow that does the first pass in minutes, so your people review output instead of producing it.',
   },
   {
-    idx: '02',
-    title: 'AI Engineering & Integration',
-    what: 'We design and build LLM, RAG, and agent systems and integrate them into your products and operations — with the evaluation, guardrails, and observability that separate a reliable feature from a brittle one.',
-    why: 'Production-grade, not a demo that breaks under load. A prototype proves it’s possible; this is the part that makes it dependable.',
+    problem:
+      'You’re growing, and the only lever anyone offers you is “hire more people.” Every new contract strains the same operating model, and headcount eats the margin growth was supposed to create.',
+    solution:
+      'We find the operating leverage in your document-heavy workflows so growth doesn’t mean proportional hiring.',
   },
   {
-    idx: '03',
-    title: 'Software Engineering & Architecture',
-    what: 'Full-stack engineering for the systems your business runs on — new builds, modernization of legacy code, and the architecture decisions underneath. AI or not, the fundamentals still have to be sound.',
-    why: 'Durable systems that outlast the engagement. We build software your own team can own, understand, and extend.',
+    problem:
+      'The big consultancies won’t show up for a company your size, and the AI vendors want to sell you a platform, not a result. You’re left to sort what’s real from what’s hype on your own.',
+    solution:
+      'We’re local, we scope to your business, and we measure success in dollars saved or made.',
+  },
+];
+
+const nonprofit = [
+  {
+    problem:
+      'You’ve submitted application after application and heard nothing back — and no one will tell you why. The mission is strong, the need is real, and still the answer is no.',
+    solution:
+      'We diagnose the pattern across your submissions and find what funders are actually responding to.',
   },
   {
-    idx: '04',
-    title: 'Advisory & Team Enablement',
-    what: 'Embedded senior guidance for teams already in motion: architecture review, code review, technical due diligence, and hands-on upskilling in modern AI and software practice.',
-    why: 'Capability stays in your house, not ours. The goal is to leave your team more capable than we found it.',
+    problem:
+      'Funders research your board, your financials, and your partnerships before they ever call. They form an impression from documents you can’t see — and you never get to answer it.',
+    solution:
+      'We assess your fundability the way a funder would, then close the gaps before you apply again.',
+  },
+  {
+    problem:
+      'Your materials lead with the need in the community, when funders are deciding whether they can trust you to deliver. The language meant to move them is quietly working against you.',
+    solution:
+      'We reposition your story so it signals capacity and credibility, not just cause — and we bring the same AI leverage to your operations.',
   },
 ];
 ---
 <SiteLayout
-  title="Services"
-  description="AI strategy, AI engineering, software architecture, and advisory — delivered by senior engineers, built for production."
+  title="Services — AI for Business & Nonprofit Advisory"
+  description="AI workflow integration for owner-led businesses, and fundability, donor, and board advisory for nonprofits across South Louisiana."
 >
   <section class="shell masthead">
     <span class="eyebrow">Services</span>
     <h1>What we do, and why it matters.</h1>
     <p class="lead">
-      Four practices, one standard: senior people, built for production. Each engagement
-      is scoped to the problem in front of you.
+      AI workflow integration for owner-led businesses, and fundability, donor, and board
+      advisory for nonprofits across South Louisiana.
     </p>
   </section>
 
-  <section class="shell section" aria-label="Service offerings">
-    <div class="entries">
-      {services.map((s) => (
-        <article class="entry">
-          <span class="entry-idx num">{s.idx}</span>
-          <div class="entry-body">
-            <h3>{s.title}</h3>
-            <p class="what">{s.what}</p>
-            <p class="why"><b>Why it matters.</b> {s.why}</p>
-          </div>
-        </article>
-      ))}
+  <section class="shell section" aria-labelledby="biz-head">
+    <div class="svc-block">
+      <div class="section-head">
+        <span class="eyebrow">For business</span>
+        <h2 id="biz-head">AI for business</h2>
+      </div>
+      <div class="pain-list">
+        {business.map((p) => (
+          <article class="pain">
+            <p class="problem">{p.problem}</p>
+            <p class="solution"><span class="arrow" aria-hidden="true">→</span>{p.solution}</p>
+          </article>
+        ))}
+      </div>
+      <div class="actions">
+        <a class="btn" href="/contact">Start a conversation</a>
+      </div>
     </div>
   </section>
 
-  <section class="shell section" aria-labelledby="svc-cta">
-    <div class="cta-band">
-      <h2 id="svc-cta">Not sure which fits? Start with a conversation.</h2>
-      <a class="btn" href="/contact">Start a conversation</a>
+  <section class="shell section" aria-labelledby="np-head">
+    <div class="svc-block">
+      <div class="section-head">
+        <span class="eyebrow">For nonprofits</span>
+        <h2 id="np-head">Advisory for nonprofits</h2>
+      </div>
+      <div class="pain-list">
+        {nonprofit.map((p) => (
+          <article class="pain">
+            <p class="problem">{p.problem}</p>
+            <p class="solution"><span class="arrow" aria-hidden="true">→</span>{p.solution}</p>
+          </article>
+        ))}
+      </div>
+      <div class="actions">
+        <a class="btn" href="/contact">Start a conversation</a>
+      </div>
     </div>
   </section>
 </SiteLayout>

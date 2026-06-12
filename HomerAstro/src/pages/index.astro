@@ -2,30 +2,39 @@
 import SiteLayout from '../layouts/SiteLayout.astro';
 
 const services = [
-  { idx: '01', title: 'AI Strategy & Assessment', blurb: 'Where AI actually earns its place — and where it doesn’t.' },
-  { idx: '02', title: 'AI Engineering & Integration', blurb: 'LLM, RAG, and agent systems built into real products.' },
-  { idx: '03', title: 'Software Engineering & Architecture', blurb: 'Full-stack build and modernization of core systems.' },
-  { idx: '04', title: 'Advisory & Team Enablement', blurb: 'Embedded senior guidance, review, and upskilling.' },
+  {
+    idx: '01',
+    title: 'AI for business',
+    blurb:
+      'Operating leverage for owner-led companies. We turn document-heavy work — estimates, leases, compliance files — into AI workflows your team checks instead of produces.',
+  },
+  {
+    idx: '02',
+    title: 'Advisory for nonprofits',
+    blurb:
+      'Fundability, donor strategy, board operations, and AI integration for mission-driven organizations.',
+  },
 ];
 
-// Proof points — PLACEHOLDER figures, marked for replacement with real numbers.
 const stats = [
-  { figure: '15+', label: 'Years building production software' },
-  { figure: '40+', label: 'Engagements delivered' },
-  { figure: '99.9%', label: 'Uptime on systems we operate' },
+  { figure: '60', label: 'Years combined experience' },
+  { figure: '30', label: 'Years software & technology leadership' },
+  { figure: '30', label: 'Years Louisiana business leadership' },
+  { figure: '10', label: 'Years running a nonprofit' },
+  { figure: '3', label: 'Years building agentic AI systems' },
 ];
 ---
 <SiteLayout
-  title="Trustlight"
-  description="Trustlight is a senior AI and software consultancy. We help teams decide where AI genuinely fits, then design, build, and ship it."
+  title="Trustlight — AI Integration & Nonprofit Advisory in South Louisiana"
+  description="A husband-and-wife advisory team helping Louisiana businesses and nonprofits understand and implement AI that pays for itself. Lafayette, Baton Rouge, New Orleans."
 >
   <!-- Masthead — report-style, left aligned, one primary action -->
   <section class="shell masthead">
-    <span class="eyebrow">Trustlight · AI &amp; Software Consulting</span>
-    <h1>We build AI and software systems that hold up in production.</h1>
+    <span class="eyebrow">Trustlight · South Louisiana</span>
+    <h1>We help Louisiana organizations understand and implement AI that pays for itself.</h1>
     <p class="lead">
-      Trustlight is a senior AI and software consultancy. We help teams decide where
-      AI genuinely fits, then design, build, and ship it.
+      Trustlight is a husband-and-wife advisory team. We find the workflow bottlenecks
+      costing you time and money, and we build the systems that remove them.
     </p>
     <div class="actions">
       <a class="btn" href="/contact">Start a conversation</a>
@@ -50,14 +59,14 @@ const stats = [
     </div>
   </section>
 
-  <!-- Credibility band — proof points, figures in Plex Mono tabular -->
+  <!-- Credibility band — figures in Plex Mono tabular -->
   <section class="credibility" aria-labelledby="proof-head">
     <div class="shell">
       <div class="section-head">
         <span class="eyebrow">Track record</span>
-        <h2 id="proof-head">Built to be relied on.</h2>
+        <h2 id="proof-head">Built on experience that compounds.</h2>
       </div>
-      <div class="stats is-placeholder">
+      <div class="stats">
         {stats.map((s) => (
           <div class="stat">
             <span class="stat-figure">{s.figure}</span>
@@ -65,35 +74,13 @@ const stats = [
           </div>
         ))}
       </div>
-      <p class="muted" style="margin-top: var(--s-6); font-size: var(--t-13);">
-        Placeholder figures — to be replaced with verified numbers.
-      </p>
-    </div>
-  </section>
-
-  <!-- About teaser -->
-  <section class="shell section" aria-labelledby="about-teaser">
-    <div class="split">
-      <div>
-        <span class="eyebrow">Who we are</span>
-        <h2 id="about-teaser" style="margin-top: var(--s-3);">A small, senior shop.</h2>
-      </div>
-      <div class="prose">
-        <p class="lead">
-          We are a small consultancy of senior engineers. We think in years, not demos,
-          and we tell you plainly when AI isn’t the answer.
-        </p>
-        <p style="margin-top: var(--s-6);">
-          <a class="link-arrow" href="/about">More about Trustlight →</a>
-        </p>
-      </div>
     </div>
   </section>
 
   <!-- Closing contact prompt -->
   <section class="shell section" aria-labelledby="contact-cta">
     <div class="cta-band">
-      <h2 id="contact-cta">Have a problem worth getting right?</h2>
+      <h2 id="contact-cta">Tell us where the work is piling up. We’ll tell you what’s possible.</h2>
       <a class="btn" href="/contact">Start a conversation</a>
     </div>
   </section>
