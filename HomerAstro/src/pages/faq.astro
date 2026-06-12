@@ -1,0 +1,159 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const sections = [
+  {
+    id: 'faq-ai',
+    eyebrow: 'AI',
+    heading: 'About AI — what business owners ask first',
+    items: [
+      {
+        q: 'We keep hearing we should “use AI” — where do we even start?',
+        a: 'You start with one bottleneck, not a platform. The most common mistake we see is buying a tool before knowing the problem. We look at where your team spends days on work that follows a predictable pattern — estimates, document review, intake, scheduling — and we begin there. One workflow, measured, before anything scales. Survey after survey finds the same thing: the barrier isn’t access to AI anymore, it’s knowing where to begin.',
+      },
+      {
+        q: 'Is my business too small for this to be worth it?',
+        a: 'No. The economics have flipped. The companies seeing the clearest returns aren’t the ones with the biggest budgets — they’re the ones who pick the right first workflow and measure it. If you’re an owner-led business doing document-heavy work, you are exactly who this pays off for.',
+      },
+      {
+        q: 'How fast does AI actually pay for itself?',
+        a: 'It depends on the workflow, but the right first project usually pays back in weeks to a few months, not years — because we deliberately target the work costing you the most time today. We won’t take on a project we can’t tie to dollars saved or made. If we can’t see the ROI, we’ll tell you.',
+      },
+      {
+        q: 'Will AI replace my people?',
+        a: 'That’s the wrong fear. In the work we do, AI does the slow first pass — pulling data out of a 200-page lease, drafting the estimate, sorting the intake — and your people review and decide. It removes the grind, not the judgment. The usual result is your existing team handling more without you having to hire for volume.',
+      },
+      {
+        q: 'Isn’t AI unreliable? I’ve heard it makes things up.',
+        a: 'It can, and that’s exactly why a system needs to be built right. We design workflows where AI handles the heavy lifting and a person verifies the output before it counts — never AI making the final call unchecked. Done properly, you get the speed without betting your reputation on a machine’s guess.',
+      },
+      {
+        q: 'Is my company’s data safe if we use AI?',
+        a: 'This is the right question to ask, and most vendors gloss over it. We build with your data governance in mind — what can be processed, what stays in-house, where it lives, and who can see it. We’ll tell you plainly which of your information is safe to run through AI and which isn’t.',
+      },
+      {
+        q: 'Everyone’s selling “AI.” How do I tell what’s real from what’s hype?',
+        a: 'Ask anyone selling you AI one question: what dollar figure does this move, and how will we measure it? Real solutions have an answer. Hype has a demo. We measure in time reclaimed and money saved or made — if a project can’t be tied to that, we don’t recommend it.',
+      },
+    ],
+  },
+  {
+    id: 'faq-nonprofit',
+    eyebrow: 'Nonprofits',
+    heading: 'About nonprofits — what leaders ask',
+    items: [
+      {
+        q: 'Can a nonprofit our size actually afford AI?',
+        a: 'Yes — and the funding landscape has shifted hard in your favor. Major foundations and tech companies have committed hundreds of millions to AI-readiness grants for nonprofits, much of it aimed at mid-sized organizations that get overlooked. Part of our work is helping you position for that money, not just spend your own.',
+      },
+      {
+        q: 'We’ve sent application after application and heard nothing. Why?',
+        a: 'Funding failure is rarely a mission problem. It’s almost always a positioning, infrastructure, or evidence problem — and it’s usually invisible from the inside. We look at the pattern across your submissions and find what funders are actually reacting to, so you stop guessing.',
+      },
+      {
+        q: 'What do funders see when they look at us before they ever call?',
+        a: 'More than you’d think. They check your board, your financials, your filings, your partnerships, and your public profile — and form an impression you never get to answer. We assess your fundability the way a funder would, then help you close the gaps before the next application goes out.',
+      },
+      {
+        q: 'Should we tell funders we used AI to write our grant?',
+        a: 'Disclosure norms are still forming, and they vary by funder. The bigger risk is accuracy — AI can invent statistics and citations that read as real. Every number and claim in a proposal has to be verified against your actual data before it’s submitted. We help you use AI to write faster without putting your credibility at risk.',
+      },
+      {
+        q: 'Can AI help us measure and prove our impact?',
+        a: 'Yes, and this is often the highest-value place to start. Funders fund evidence, not intentions. We help build the outcome-tracking and reporting systems that turn what you’re already doing into the measurable impact funders require.',
+      },
+    ],
+  },
+  {
+    id: 'faq-process',
+    eyebrow: 'Process',
+    heading: 'How we work',
+    items: [
+      {
+        q: 'What’s the process when we engage Trustlight?',
+        a: 'It starts with a conversation about where the work is piling up. From there we run a focused diagnostic to find the highest-value bottleneck or fundability gap, scope a first project we can measure, build it alongside your team, and confirm the result in real numbers. We start small and prove it before anything scales.',
+      },
+      {
+        q: 'How long does a typical engagement take?',
+        a: 'A focused first project is usually weeks, not months — that’s by design. We’d rather deliver one measurable win quickly than disappear into a year-long transformation. Longer relationships grow from that first proof, at your pace.',
+      },
+      {
+        q: 'Do we need any technical knowledge or staff to work with you?',
+        a: 'No. That’s our job. Rob has thirty years in software and technology leadership and three years building fully agentic AI systems; we translate all of it into plain terms and handle the technical side. You bring knowledge of your business; we bring the build.',
+      },
+      {
+        q: 'What does this cost?',
+        a: 'Engagements are scoped to the work, because a single-workflow project and a full strategy build aren’t the same size. After an initial conversation we give you a clear scope and price before any commitment — no open-ended billing, no surprises. The first question we answer is whether the return justifies the cost. If it doesn’t, we’ll say so.',
+      },
+    ],
+  },
+  {
+    id: 'faq-about',
+    eyebrow: 'Trustlight',
+    heading: 'About us',
+    items: [
+      {
+        q: 'Who is Trustlight?',
+        a: 'Camille and Rob Gaudet — a husband-and-wife advisory team based in South Louisiana, married in New Orleans in 2023. We work side by side, solving the same problem from different angles. Between us: sixty years of operating experience, thirty in software and technology leadership, thirty as a Louisiana business leader, ten running a nonprofit, and three building agentic AI systems.',
+      },
+      {
+        q: 'Why work with a two-person team instead of a big consultancy?',
+        a: 'Because the big consultancies won’t show up for a company or nonprofit your size, and the ones that do send junior staff and a template. You work directly with us — the people doing the thinking — and we’re local. We measure success the way you do: in results.',
+      },
+      {
+        q: 'Do you only work with companies in New Orleans?',
+        a: 'No. We serve owner-led businesses and nonprofits across South Louisiana — Lafayette, Baton Rouge, and New Orleans. We’re rooted here and we work throughout the region.',
+      },
+      {
+        q: 'How do we get started?',
+        a: 'Tell us where the work is piling up. Email hello@trustlight.com or call 504-302-8656, and we’ll set up a conversation about what’s possible. No pressure, no pitch deck — just a straight read on whether we can help.',
+      },
+    ],
+  },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: sections.flatMap((s) => s.items).map((it) => ({
+    '@type': 'Question',
+    name: it.q,
+    acceptedAnswer: { '@type': 'Answer', text: it.a },
+  })),
+};
+---
+<SiteLayout
+  title="FAQ — Trustlight"
+  description="Answers to common questions about AI integration for businesses and nonprofit advisory in South Louisiana — costs, process, ROI, and how we work."
+>
+  <section class="shell masthead">
+    <span class="eyebrow">Common questions</span>
+    <h1>Questions we hear, answered plainly.</h1>
+  </section>
+
+  {sections.map((s) => (
+    <section class="shell section" aria-labelledby={s.id}>
+      <div class="section-head">
+        <span class="eyebrow">{s.eyebrow}</span>
+        <h2 id={s.id}>{s.heading}</h2>
+      </div>
+      <div class="faq-list">
+        {s.items.map((it) => (
+          <article class="faq-item">
+            <h3>{it.q}</h3>
+            <p>{it.a}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  ))}
+
+  <section class="shell section" aria-labelledby="faq-cta">
+    <div class="cta-band">
+      <h2 id="faq-cta">Still have a question? Ask us directly.</h2>
+      <a class="btn" href="/contact">Start a conversation</a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+</SiteLayout>
