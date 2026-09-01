@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrustLight — Verified Home Repair Contractors in South Louisiana</title>
+<meta name="description" content="TrustLight independently verifies home repair contractors — background checks, license verification, insurance. Free for homeowners. Partnered with Cajun Navy Ground Force.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#0B1C33;
+    --navy-2:#122842;
+    --crimson:#A8241F;
+    --crimson-deep:#8A1C18;
+    --white:#FFFFFF;
+    --paper:#F2F5F8;
+    --steel:#5B6B7D;
+    --line:#DCE1E6;
+    --dim-bg:#E8EBEE;
+    --dim-text:#8B94A0;
+    --dim-border:#C5CCD4;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--white); color:var(--navy); font-family:'Inter',sans-serif; line-height:1.55; -webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:'Archivo',sans-serif; color:var(--navy); letter-spacing:-0.015em; line-height:1.15;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1140px; margin:0 auto; padding:0 32px;}
+
+  .flagline{height:5px; background:repeating-linear-gradient(90deg,var(--navy) 0 33.3%,var(--white) 33.3% 33.4%,var(--crimson) 33.4% 66.6%,var(--white) 66.6% 66.7%,var(--navy) 66.7% 100%);}
+
+  /* NAV */
+  nav{background:var(--navy); border-bottom:3px solid var(--crimson);}
+  .nav-in{max-width:1140px; margin:0 auto; padding:14px 32px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+  .brand{display:flex; align-items:center; gap:11px;}
+  .brand-txt{display:flex; flex-direction:column; line-height:1.1;}
+  .brand-txt b{font-family:'Archivo',sans-serif; font-size:21px; font-weight:800; color:#fff;}
+  .brand-txt small{font-size:11px; color:#93A8BD;}
+  .nav-links{display:flex; align-items:center; gap:4px;}
+  .nav-links a{font-size:13.5px; color:#C2D0DC; padding:8px 12px; border-radius:4px; font-weight:500;}
+  .nav-links a:hover{color:#fff; background:rgba(255,255,255,.07);}
+  .nav-links a.cta{background:var(--crimson); color:#fff; font-weight:700;}
+
+  /* HERO */
+  .hero{background:var(--navy); color:#fff; padding:60px 0 54px;}
+  .hero-grid{display:grid; grid-template-columns:1fr auto; gap:56px; align-items:center;}
+  .hero h1{font-size:clamp(2.1rem,4.4vw,3.15rem); font-weight:900; color:#fff; max-width:15ch;}
+  .hero p{color:#B4C4D3; font-size:16.5px; margin-top:18px; max-width:50ch;}
+  .hero-actions{display:flex; gap:12px; margin-top:28px; flex-wrap:wrap;}
+  .btn{display:inline-block; padding:13px 22px; border-radius:5px; font-size:14.5px; font-weight:700; font-family:'Inter',sans-serif; cursor:pointer; border:none;}
+  .btn-crimson{background:var(--crimson); color:#fff;}
+  .btn-crimson:hover{background:var(--crimson-deep);}
+  .btn-ghost{background:transparent; color:#fff; border:1.5px solid #35506E;}
+  .btn-ghost:hover{background:rgba(255,255,255,.07);}
+  .hero-badge{width:190px; height:190px; flex-shrink:0;}
+  @media(max-width:820px){ .hero-grid{grid-template-columns:1fr;} .hero-badge{width:140px;height:140px;} }
+
+  /* STATS */
+  .stats{background:var(--navy-2); border-top:1px solid #23405F; border-bottom:1px solid #23405F;}
+  .stats-in{max-width:1140px; margin:0 auto; padding:20px 32px; display:flex; gap:40px; flex-wrap:wrap; justify-content:center;}
+  .stat{text-align:center;}
+  .stat b{display:block; font-family:'Archivo',sans-serif; font-size:22px; font-weight:800; color:#fff;}
+  .stat span{font-size:11.5px; color:#8FA6BC;}
+
+  /* SEARCH */
+  .searchbar{background:var(--paper); border-bottom:1px solid var(--line); padding:20px 0;}
+  .search-in{display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
+  .search-in select, .search-in input{padding:11px 14px; border:1.5px solid var(--line); border-radius:5px; font-size:14px; font-family:inherit; color:var(--navy); background:#fff; min-width:170px;}
+  .search-in select:focus, .search-in input:focus{outline:none; border-color:var(--navy);}
+  .search-in input{flex:1; min-width:200px;}
+  .result-count{margin-left:auto; font-size:13px; color:var(--steel);}
+
+  /* SECTIONS */
+  section.pad{padding:52px 0;}
+  .sec-head{border-bottom:2px solid var(--navy); padding-bottom:13px; margin-bottom:24px; display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px;}
+  .sec-head h2{font-size:25px; font-weight:800;}
+  .sec-head p{font-size:13.5px; color:var(--steel); margin-top:4px;}
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:18px;}
+
+  /* CARD */
+  .card{background:#fff; border:1px solid var(--line); border-left:4px solid var(--navy); border-radius:5px; padding:18px; display:flex; flex-direction:column;}
+  .card-top{display:flex; justify-content:space-between; align-items:flex-start; gap:12px;}
+  .trade{display:inline-block; font-size:11.5px; font-weight:700; color:var(--steel); letter-spacing:.04em; margin-bottom:7px;}
+  .card h3{font-size:17.5px; font-weight:800;}
+  .card .city{font-size:13px; color:var(--steel); margin-top:2px;}
+  .card-seal{width:44px; height:44px; flex-shrink:0;}
+  .verified-row{display:flex; gap:7px; flex-wrap:wrap; margin-top:12px;}
+  .vchip{font-size:11px; font-weight:600; color:var(--navy); background:#E6EDF4; padding:3px 8px; border-radius:3px; display:flex; align-items:center; gap:4px;}
+  .vchip svg{width:10px; height:10px;}
+  .rating{font-size:13px; margin-top:11px; color:var(--crimson-deep); font-weight:700;}
+  .rating span{color:var(--steel); font-weight:400; margin-left:4px;}
+  .blurb{font-size:13.5px; color:var(--steel); margin-top:9px; flex:1;}
+
+  /* DIGITAL INDEX — deliberately a different visual language than the seal */
+  .dti{margin-top:14px; padding-top:13px; border-top:1px dashed var(--line);}
+  .dti-head{display:flex; justify-content:space-between; align-items:baseline; font-size:11.5px; color:var(--steel); font-weight:600;}
+  .dti-head b{font-family:'Archivo',sans-serif; font-size:15px; color:var(--navy); font-weight:800;}
+  .dti-bars{display:flex; gap:3px; margin-top:7px;}
+  .dti-bars i{height:5px; flex:1; border-radius:1px; background:var(--dim-border);}
+  .dti-bars i.on{background:var(--navy);}
+  .dti-note{font-size:11px; color:var(--dim-text); margin-top:6px;}
+
+  .card-cta{margin-top:14px; background:var(--navy); color:#fff; text-align:center; padding:10px; border-radius:5px; font-size:13.5px; font-weight:700;}
+  .card-cta:hover{background:var(--navy-2);}
+
+  /* UNVETTED */
+  .unvetted{background:var(--dim-bg);}
+  .promo{background:var(--crimson); color:#fff; border-radius:5px; padding:18px 22px; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; margin-bottom:26px;}
+  .promo h3{color:#fff; font-size:17px; font-weight:800;}
+  .promo p{font-size:13.5px; color:#F6D9D7; margin-top:3px; max-width:60ch;}
+  .promo a{background:var(--navy); color:#fff; padding:11px 20px; border-radius:5px; font-weight:700; font-size:14px; white-space:nowrap;}
+  .card.dim{background:transparent; border:1.5px dashed var(--dim-border); border-left:1.5px dashed var(--dim-border);}
+  .card.dim h3{color:#6C7683; font-size:16.5px;}
+  .card.dim .city, .card.dim .trade{color:var(--dim-text);}
+  .card.dim .lock{font-size:12px; color:#8B94A0; margin-top:11px; font-style:italic;}
+
+  /* CHECKS */
+  .checks{background:var(--paper);}
+  .two-col{display:grid; grid-template-columns:1fr 1fr; gap:40px;}
+  @media(max-width:860px){ .two-col{grid-template-columns:1fr; gap:32px;} }
+  .col h3{font-size:19px; font-weight:800; margin-bottom:6px;}
+  .col > p{font-size:13.5px; color:var(--steel); margin-bottom:18px;}
+  .chk{display:flex; gap:12px; padding:11px 0; border-bottom:1px solid var(--line); font-size:13.5px;}
+  .chk:last-child{border-bottom:none;}
+  .chk-n{width:24px;height:24px;flex-shrink:0;background:var(--navy);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;font-family:'Archivo',sans-serif;}
+  .chk b{display:block; font-weight:700; font-size:13.5px;}
+  .chk p{color:var(--steel); font-size:12.5px; margin-top:2px;}
+  .pillar{display:flex; gap:12px; padding:11px 0; border-bottom:1px solid var(--line);}
+  .pillar:last-child{border-bottom:none;}
+  .pillar-dot{width:24px;height:24px;flex-shrink:0;border:2px solid var(--crimson);border-radius:3px;}
+  .disclaimer{margin-top:20px; padding:14px 16px; background:#fff; border-left:3px solid var(--crimson); font-size:12.5px; color:var(--steel);}
+
+  /* DUAL CTA */
+  .dual{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  @media(max-width:760px){ .dual{grid-template-columns:1fr;} }
+  .pane{border-radius:6px; padding:36px 32px;}
+  .pane.home{background:var(--navy); color:#fff;}
+  .pane.pro{background:#fff; border:2px solid var(--navy);}
+  .pane h3{font-size:22px; font-weight:800; margin-bottom:8px;}
+  .pane.home h3{color:#fff;}
+  .pane p{font-size:14px; margin-bottom:20px;}
+  .pane.home p{color:#B4C4D3;}
+  .pane.pro p{color:var(--steel);}
+  .pane ul{list-style:none; margin-bottom:22px;}
+  .pane li{font-size:13.5px; padding:5px 0; display:flex; gap:9px;}
+  .pane.home li{color:#C8D6E2;}
+  .pane.pro li{color:var(--steel);}
+  .price{font-family:'Archivo',sans-serif; font-size:15px; font-weight:800; color:var(--navy); margin-bottom:14px;}
+
+  footer{background:var(--navy); color:#8FA6BC; padding:44px 0 28px; font-size:13px;}
+  .foot-top{display:flex; justify-content:space-between; gap:32px; flex-wrap:wrap; padding-bottom:26px; border-bottom:1px solid #23405F; margin-bottom:20px;}
+  .foot-brand{max-width:340px;}
+  .foot-brand b{color:#fff; font-family:'Archivo',sans-serif; font-size:16px; display:block; margin-bottom:7px;}
+  .foot-col b{color:#fff; font-size:12px; display:block; margin-bottom:9px;}
+  .foot-col a{display:block; padding:3px 0; color:#8FA6BC; font-size:12.5px;}
+  .foot-col a:hover{color:#fff;}
+  .foot-bot{font-size:12px; display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap;}
+
+  @media(max-width:640px){
+    .wrap,.nav-in,.stats-in{padding-left:18px; padding-right:18px;}
+    .nav-links{display:none;}
+    section.pad{padding:38px 0;}
+    .pane{padding:28px 22px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="flagline"></div>
+
+<nav>
+  <div class="nav-in">
+    <a class="brand" href="#">
+      <svg width="38" height="38" viewBox="0 0 40 40" fill="none">
+        <path d="M20 3l14 5v11c0 8.3-5.7 15.4-14 18-8.3-2.6-14-9.7-14-18V8l14-5z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M20 7l10.5 3.7V19c0 6.2-4.2 11.5-10.5 13.7C13.7 30.5 9.5 25.2 9.5 19v-8.3L20 7z" fill="none" stroke="#A8241F" stroke-width="1.4" stroke-linejoin="round"/>
+        <path d="M14 19.5l4.3 4.3L26.5 15" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-txt">
+        <b>TrustLight</b>
+        <small>with Cajun Navy Ground Force</small>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="#directory">Directory</a>
+      <a href="#checks">What We Check</a>
+      <a href="#contractors">For Contractors</a>
+      <a href="#contractors" class="cta">Get Verified</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Know who you're letting on your roof.</h1>
+      <p>After a storm, anyone with a truck can call themselves a contractor. TrustLight checks the background, the license, and the insurance before a business appears on this list — and re-checks every year. Free to use, no account needed.</p>
+      <div class="hero-actions">
+        <a href="#directory" class="btn btn-crimson">Browse verified contractors</a>
+        <a href="#checks" class="btn btn-ghost">See what we check</a>
+      </div>
+    </div>
+    <svg class="hero-badge" viewBox="0 0 200 200" fill="none">
+      <path d="M100 12l72 25v58c0 43-29.5 79.5-72 92-42.5-12.5-72-49-72-92V37l72-25z" fill="#122842" stroke="#2C4C70" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M100 26l58 20.2V95c0 35.5-24 65.8-58 76.5C66 160.8 42 130.5 42 95V46.2L100 26z" fill="none" stroke="#A8241F" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M70 98l21 21 41-45" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="100" y="146" text-anchor="middle" fill="#8FA6BC" font-family="Archivo,sans-serif" font-size="12" font-weight="700" letter-spacing="1.5">VERIFIED 2026</text>
+    </svg>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stats-in">
+    <div class="stat"><b>9</b><span>Verification checks</span></div>
+    <div class="stat"><b>3</b><span>Louisiana cities</span></div>
+    <div class="stat"><b>$0</b><span>Cost to homeowners</span></div>
+    <div class="stat"><b>Annual</b><span>Re-verification</span></div>
+    <div class="stat"><b>None</b><span>Paid placement</span></div>
+  </div>
+</div>
+
+<div class="searchbar" id="directory">
+  <div class="wrap search-in">
+    <select id="cityF">
+      <option value="all">All cities</option>
+      <option>New Orleans</option>
+      <option>Baton Rouge</option>
+      <option>Lafayette</option>
+    </select>
+    <select id="tradeF">
+      <option value="all">All trades</option>
+    </select>
+    <input type="text" id="nameF" placeholder="Search by business name">
+    <span class="result-count" id="count"></span>
+  </div>
+</div>
+
+<section class="pad">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>Verified contractors</h2>
+        <p>Background, license, and insurance confirmed by our team — not self-reported.</p>
+      </div>
+    </div>
+    <div class="grid" id="vettedGrid"></div>
+  </div>
+</section>
+
+<section class="pad unvetted" id="contractors">
+  <div class="wrap">
+    <div class="promo">
+      <div>
+        <h3>Own one of these businesses?</h3>
+        <p>Complete verification to unlock your full profile, earn the TrustLight badge for your own website, and appear where families are looking after a storm. $497/year. No paid placement — verification is the only way in.</p>
+      </div>
+      <a href="#">Start verification</a>
+    </div>
+    <div class="sec-head">
+      <div>
+        <h2>Not yet verified</h2>
+        <p>Listed in our directory, but they haven't completed verification.</p>
+      </div>
+    </div>
+    <div class="grid" id="unvettedGrid"></div>
+  </div>
+</section>
+
+<section class="pad checks" id="checks">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>What "verified" actually means</h2>
+        <p>We measure two different things, and we keep them separate on purpose.</p>
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="col">
+        <h3>Safety verification</h3>
+        <p>Pass or fail. Every business must clear all nine. This is what protects you from fraud.</p>
+        <div class="chk"><div class="chk-n">1</div><div><b>Owner background check</b><p>Fraud, theft, or property-crime convictions disqualify the business.</p></div></div>
+        <div class="chk"><div class="chk-n">2</div><div><b>License verification</b><p>Confirmed with the Louisiana State Licensing Board — not from a document they hand us.</p></div></div>
+        <div class="chk"><div class="chk-n">3</div><div><b>Insurance confirmation</b><p>We call the insurer. General liability and workers' comp, both current.</p></div></div>
+        <div class="chk"><div class="chk-n">4</div><div><b>Business filing</b><p>Active and in good standing with the Secretary of State.</p></div></div>
+        <div class="chk"><div class="chk-n">5</div><div><b>Physical address</b><p>Real, verified, matches state registration. No P.O. boxes.</p></div></div>
+        <div class="chk"><div class="chk-n">6</div><div><b>Years in business</b><p>Confirmed through state records, not self-reported.</p></div></div>
+        <div class="chk"><div class="chk-n">7</div><div><b>Contact verification</b><p>Phone and email confirmed active and answered.</p></div></div>
+        <div class="chk"><div class="chk-n">8</div><div><b>Review authenticity</b><p>Reviews checked for gating, manipulation, and suspicious patterns.</p></div></div>
+        <div class="chk"><div class="chk-n">9</div><div><b>Annual re-verification</b><p>All checks repeat yearly. Failing suspends the listing.</p></div></div>
+      </div>
+      <div class="col">
+        <h3>Digital Trust Index</h3>
+        <p>A 0–100 score across five areas. This tells you how findable and responsive a business is — it is <b>not</b> a safety rating.</p>
+        <div class="pillar"><div class="pillar-dot"></div><div><b>Findability</b><p>Google Business Profile, consistent name and phone across the web, working local search presence.</p></div></div>
+        <div class="pillar"><div class="pillar-dot"></div><div><b>Answerability</b><p>Whether AI assistants and search engines can actually find and describe this business correctly.</p></div></div>
+        <div class="pillar"><div class="pillar-dot"></div><div><b>Responsiveness</b><p>We test every contact method. How long until a real person answers — regardless of what tools they use to do it.</p></div></div>
+        <div class="pillar"><div class="pillar-dot"></div><div><b>Completeness</b><p>Services, hours, real photos, licensing stated publicly, contact info that works.</p></div></div>
+        <div class="pillar"><div class="pillar-dot"></div><div><b>Compliance</b><p>Privacy policy, terms, accessibility, honest advertising, and disclosure when you're talking to AI.</p></div></div>
+        <div class="disclaimer">
+          A high Digital Trust Index does not mean a business is honest, and a low one does not mean it isn't. Plenty of excellent contractors have outdated websites. Use the safety verification to decide who is safe to hire — use this score to know how easily you'll be able to reach them. We do not score businesses on whether they buy services from us.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad">
+  <div class="wrap dual">
+    <div class="pane home">
+      <h3>For homeowners</h3>
+      <p>Free, always. No account, no email required to browse.</p>
+      <ul>
+        <li>▸ Every listed business checked before it appears</li>
+        <li>▸ No paid placement — nobody buys their way up</li>
+        <li>▸ Report a contractor and we'll investigate</li>
+        <li>▸ Distributed through Cajun Navy Ground Force after disasters</li>
+      </ul>
+      <a href="#directory" class="btn btn-crimson">Browse the directory</a>
+    </div>
+    <div class="pane pro">
+      <h3>For contractors</h3>
+      <p>Verification is the only way onto the list. Services are optional and separate.</p>
+      <div class="price">Verification — $497/year</div>
+      <ul>
+        <li>▸ Full public profile with your verified badge</li>
+        <li>▸ Embeddable TrustLight seal for your own website</li>
+        <li>▸ Your complete Digital Trust Index scorecard</li>
+        <li>▸ Listed where storm-affected families are looking</li>
+      </ul>
+      <a href="#" class="btn btn-crimson">Start verification</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <b>TrustLight</b>
+        <p>Independent contractor verification for South Louisiana. Built with Cajun Navy Ground Force, who put it in the hands of families after the storm.</p>
+      </div>
+      <div class="foot-col">
+        <b>Homeowners</b>
+        <a href="#directory">Find a contractor</a>
+        <a href="#checks">What we check</a>
+        <a href="#">Report a contractor</a>
+      </div>
+      <div class="foot-col">
+        <b>Contractors</b>
+        <a href="#contractors">Get verified</a>
+        <a href="#">Digital services</a>
+        <a href="#">Our calling policy</a>
+      </div>
+      <div class="foot-col">
+        <b>TrustLight</b>
+        <a href="#">Methodology</a>
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms of use</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 TrustLight. Verification is never for sale.</span>
+      <span>New Orleans · Baton Rouge · Lafayette</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Replace this array with a fetch() to your Worker endpoint. Field names stay the same. */
+const businesses = [
+  {name:"Bayou Roofing Co.", trade:"Roofing", city:"New Orleans", vetted:true, rating:4.8, reviews:62, dti:88, blurb:"Storm damage and full roof replacement. Twenty years working Orleans and Jefferson parishes."},
+  {name:"Crescent City HVAC", trade:"HVAC", city:"New Orleans", vetted:true, rating:4.6, reviews:41, dti:62, blurb:"Emergency AC and heating repair, same-day service across the metro area."},
+  {name:"Acadiana Plumbing Pros", trade:"Plumbing", city:"Lafayette", vetted:true, rating:4.9, reviews:88, dti:91, blurb:"Water damage response, full repipes, and slab leak detection."},
+  {name:"Red Stick Electrical", trade:"Electrical", city:"Baton Rouge", vetted:true, rating:4.7, reviews:35, dti:54, blurb:"Master electrician on every job. Panel upgrades and whole-home generators."},
+  {name:"Gulf Coast Mold Solutions", trade:"Mold Remediation", city:"New Orleans", vetted:true, rating:4.9, reviews:53, dti:77, blurb:"IICRC-certified remediation for flood-damaged homes and crawlspaces."},
+  {name:"River Parish General Contracting", trade:"General Contractor", city:"Baton Rouge", vetted:true, rating:4.5, reviews:29, dti:45, blurb:"Full rebuilds and additions. Works directly with insurance adjusters."},
+  {name:"Teche Tree Service", trade:"Tree Removal", city:"Lafayette", vetted:true, rating:4.8, reviews:47, dti:69, blurb:"Storm cleanup and hazardous removals. Fully insured crews, 24-hour response."},
+  {name:"Pontchartrain Foundation Repair", trade:"Foundation", city:"New Orleans", vetted:true, rating:4.7, reviews:31, dti:83, blurb:"Pier and beam leveling, slab stabilization, drainage correction."},
+
+  {name:"Delta Roofing & Repair", trade:"Roofing", city:"Baton Rouge", vetted:false},
+  {name:"Southshore HVAC", trade:"HVAC", city:"New Orleans", vetted:false},
+  {name:"Pelican Plumbing", trade:"Plumbing", city:"New Orleans", vetted:false},
+  {name:"Cajun Coast Electric", trade:"Electrical", city:"Lafayette", vetted:false},
+  {name:"Magnolia Restoration", trade:"General Contractor", city:"Baton Rouge", vetted:false},
+  {name:"Vermilion Tree & Land", trade:"Tree Removal", city:"Lafayette", vetted:false},
+  {name:"Bayou Bend Roofing", trade:"Roofing", city:"New Orleans", vetted:false},
+  {name:"Capital City Plumbing", trade:"Plumbing", city:"Baton Rouge", vetted:false},
+  {name:"Ninth Ward Electric", trade:"Electrical", city:"New Orleans", vetted:false},
+  {name:"Ragin' Restoration", trade:"General Contractor", city:"Lafayette", vetted:false},
+  {name:"Atchafalaya Siding", trade:"Siding", city:"Lafayette", vetted:false},
+  {name:"Gonzales Gutter Works", trade:"Gutters", city:"Baton Rouge", vetted:false},
+];
+
+const CHECK = '<svg viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+const CARD_SEAL = `<svg class="card-seal" viewBox="0 0 44 44" fill="none">
+  <path d="M22 3l15 5.2V21c0 9.4-6.3 17.4-15 20-8.7-2.6-15-10.6-15-20V8.2L22 3z" fill="#0B1C33" stroke="#0B1C33" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M22 8l10.5 3.7V21c0 6.6-4.4 12.2-10.5 14.3C15.9 33.2 11.5 27.6 11.5 21v-9.3L22 8z" fill="none" stroke="#A8241F" stroke-width="1.3" stroke-linejoin="round"/>
+  <path d="M16 21.5l4 4 8-9" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+
+function stars(r){ const f=Math.round(r); return "★".repeat(f)+"☆".repeat(5-f); }
+function bars(score){
+  const filled = Math.round(score/10);
+  let out='<div class="dti-bars">';
+  for(let i=0;i<10;i++) out += `<i class="${i<filled?'on':''}"></i>`;
+  return out+'</div>';
+}
+
+const F = {city:'all', trade:'all', name:''};
+
+const tradeSel = document.getElementById('tradeF');
+[...new Set(businesses.map(b=>b.trade))].sort().forEach(t=>{
+  const o=document.createElement('option'); o.textContent=t; tradeSel.appendChild(o);
+});
+
+function match(b){
+  return (F.city==='all'||b.city===F.city)
+      && (F.trade==='all'||b.trade===F.trade)
+      && (F.name===''||b.name.toLowerCase().includes(F.name));
+}
+
+function render(){
+  const v = businesses.filter(b=>b.vetted && match(b));
+  const u = businesses.filter(b=>!b.vetted && match(b));
+
+  document.getElementById('vettedGrid').innerHTML = v.length ? v.map(b=>`
+    <div class="card">
+      <div class="card-top">
+        <div>
+          <div class="trade">${b.trade}</div>
+          <h3>${b.name}</h3>
+          <div class="city">${b.city}, LA</div>
+        </div>
+        ${CARD_SEAL}
+      </div>
+      <div class="verified-row">
+        <span class="vchip">${CHECK} Background</span>
+        <span class="vchip">${CHECK} License</span>
+        <span class="vchip">${CHECK} Insured</span>
+      </div>
+      <div class="rating">${stars(b.rating)} <span>${b.rating} · ${b.reviews} reviews</span></div>
+      <p class="blurb">${b.blurb}</p>
+      <div class="dti">
+        <div class="dti-head"><span>Digital Trust Index</span><b>${b.dti}</b></div>
+        ${bars(b.dti)}
+        <div class="dti-note">Findability, reach, and responsiveness — not a safety rating.</div>
+      </div>
+      <a href="#" class="card-cta">View profile &amp; contact</a>
+    </div>
+  `).join('') : `<p style="color:var(--steel);font-size:14px;">No verified contractors match those filters yet.</p>`;
+
+  document.getElementById('unvettedGrid').innerHTML = u.length ? u.map(b=>`
+    <div class="card dim">
+      <div class="trade">${b.trade}</div>
+      <h3>${b.name}</h3>
+      <div class="city">${b.city}, LA</div>
+      <div class="lock">Not verified — profile locked</div>
+    </div>
+  `).join('') : `<p style="color:var(--dim-text);font-size:14px;">Nothing here matches those filters.</p>`;
+
+  document.getElementById('count').textContent = `${v.length} verified · ${u.length} unverified`;
+}
+
+document.getElementById('cityF').onchange = e => { F.city=e.target.value; render(); };
+document.getElementById('tradeF').onchange = e => { F.trade=e.target.value; render(); };
+document.getElementById('nameF').oninput = e => { F.name=e.target.value.toLowerCase().trim(); render(); };
+
+render();
+</script>
+
+</body>
+</html>
